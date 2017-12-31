@@ -14,7 +14,7 @@ import akka.stream.Materializer
 import scala.concurrent.Future
 
 private[alpakka] object Signer {
-  private val dateFormatter = DateTimeFormatter.ofPattern("YYYYMMdd'T'HHmmssX")
+  private val dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmssX")
 
   def signedRequest(request: HttpRequest, key: SigningKey, date: ZonedDateTime = ZonedDateTime.now(ZoneOffset.UTC))(
       implicit mat: Materializer
